@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textView1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/homeItemColor"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_weight="0"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/pairName"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.2"
+            android:gravity="left|center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="000"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/priceVal"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center_horizontal|center"
+            android:layout_marginLeft="15dp"
+
+            android:gravity="left|fill"
+            android:includeFontPadding="true"
+            android:text="123"
+            android:textAllCaps="false"
+            android:textColor="@color/md_grey_700"
+            android:textSize="16sp"></TextView>
+
+        <TextView
+            android:id="@+id/priceShift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.2"
+            android:elevation="0dp"
+            android:gravity="right"
+            android:text="456"></TextView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_weight="0"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

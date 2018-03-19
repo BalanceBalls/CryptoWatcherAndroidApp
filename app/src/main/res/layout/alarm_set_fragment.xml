@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_alignParentBottom="true"
+    android:background="@color/homeItemColor"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Биржа"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="10sp" />
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:id="@+id/market_spinner"
+        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="left"
+        android:textSize="13dp"
+        app:ms_background_color="@color/backgroundColor"
+        app:ms_dropdown_max_height="180dp"
+        app:ms_text_color="@color/primaryTextColor" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Валюта"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="10sp" />
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:id="@+id/pairs_spinner"
+        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="left"
+        android:drawableBottom="@drawable/ms__arrow"
+        android:textSize="13dp"
+        android:theme="@style/AppTheme"
+        app:ms_background_color="@color/backgroundColor"
+        app:ms_dropdown_height="400dp"
+        app:ms_dropdown_max_height="400dp"
+        app:ms_text_color="@color/primaryTextColor" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:text="Уровень сопротивления"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="12sp" />
+        <EditText
+            android:id="@+id/resistanceLevelValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number|numberDecimal"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="12sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:text="Уровень поддержки"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="12sp" />
+        <EditText
+            android:id="@+id/supportLevelValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="12sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/waitTimeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="Ожидание после пробития уровня"
+            android:textColor="@color/primaryTextColor"
+            android:visibility="visible" />
+        <TextView
+            android:id="@+id/timeDurationValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="0"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="14sp" />
+    </LinearLayout>
+    <SeekBar
+        android:id="@+id/waitPeriod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:theme="@style/AppTheme"
+        android:thumbTint="@color/primaryLightColor"
+        android:tickMark="@color/primaryLightColor" />
+    <Button
+        android:id="@+id/set_alarm_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryLightColor"
+        android:backgroundTintMode="@color/primaryColor"
+        android:fadingEdge="horizontal"
+        android:onClick="onAlarmStartEvent"
+        android:requiresFadingEdge="horizontal"
+        android:text="Установить будильник"
+        android:textColor="@color/textHighlighter" />
+    <!-- <android.support.design.widget.CoordinatorLayout
+         android:id="@+id/container"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+         <android.support.design.widget.FloatingActionButton
+             android:id="@+id/myFAB"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="bottom|end"
+             android:layout_marginBottom="16dp"
+             android:layout_marginRight="16dp"
+             android:clickable="true"
+             android:src="@mipmap/ic_alarm_black_18dp"
+             app:elevation="4dp" />
+     </android.support.design.widget.CoordinatorLayout>
+-->
+</LinearLayout>

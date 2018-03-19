@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CryptoWatcher</string>
+    <string name="cryptowatcher">CryptoWatcher</string>
+    <string name="graph_not_avaliable">График для этой валютной пары недоступен</string>
+    <string name="no_connection">Отсутствует интернет подключение!</string>
+    <string name="splash_screen_try_again_button">Попробовать снова</string>
+</resources>

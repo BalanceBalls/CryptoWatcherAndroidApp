@@ -107,7 +107,7 @@ public class AlarmManagerService extends Service {
         alarm.set(
                 alarm.RTC_WAKEUP,
                 System.currentTimeMillis() + 60000,
-                PendingIntent.getService(this, SERVICE_ID, new Intent(this, AlarmManagerService.class), 0)
+                PendingIntent.getService(getApplicationContext(), SERVICE_ID, new Intent(this, AlarmManagerService.class), 0)
         );
     }
 

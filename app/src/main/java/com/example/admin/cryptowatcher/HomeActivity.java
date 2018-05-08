@@ -121,7 +121,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 if(System.currentTimeMillis() - updateTime <  60000){
-                Toast.makeText(getBaseContext(), "No need to update ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), R.string.update_unnecessary_msg, Toast.LENGTH_SHORT).show();
                 Log.d(TAG, "Cancel event called");
                 swipeContainer.setRefreshing(false);
                 }
@@ -149,34 +149,34 @@ public class HomeActivity extends AppCompatActivity {
 
                 .addDrawerItems(
                         new SectionDrawerItem()
-                                .withName("Доступные биржи").withIdentifier(19)
+                                .withName(R.string.menu_markets_avaliable_text).withIdentifier(19)
                                 .withTextColor(getResources().getColor(R.color.navDrawerItemColor))
 
                                 .withDivider(false),
 
 
-                        new SecondaryDrawerItem().withName("Bittrex").withLevel(2).withIdentifier(2).withIcon(R.mipmap.ic_star_rate_black_18dp).withTextColor(getResources().getColor(R.color.navDrawerItemColor)),
-                        new SecondaryDrawerItem().withName("Exmo").withLevel(2).withIdentifier(3).withIcon(R.mipmap.ic_star_rate_black_18dp).withTextColor(getResources().getColor(R.color.navDrawerItemColor)),
+                        new SecondaryDrawerItem().withName(R.string.bittrex_text).withLevel(2).withIdentifier(2).withIcon(R.mipmap.ic_star_rate_black_18dp).withTextColor(getResources().getColor(R.color.navDrawerItemColor)),
+                        new SecondaryDrawerItem().withName(R.string.exmo_text).withLevel(2).withIdentifier(3).withIcon(R.mipmap.ic_star_rate_black_18dp).withTextColor(getResources().getColor(R.color.navDrawerItemColor)),
 
                         new DividerDrawerItem(),
 
                         new PrimaryDrawerItem()
                                 .withTextColor(getResources().getColor(R.color.navDrawerItemColor))
-                                .withName("Coinmarketcap")
+                                .withName(R.string.coinmarketcap_text)
                                 .withIcon(getDrawable(R.mipmap.ic_list_black_24dp))
 
                                 .withLevel(1)
                                 .withIdentifier(1),
                         new PrimaryDrawerItem()
                                 .withTextColor(getResources().getColor(R.color.navDrawerItemColor))
-                                .withName("Новости")
+                                .withName(R.string.news_menu_item_text)
                                 .withIcon(getDrawable(R.mipmap.ic_chrome_reader_mode_black_18dp))
                                 .withLevel(1)
                                 .withIdentifier(4),
                         new PrimaryDrawerItem()
                                 .withTextColor(getResources().getColor(R.color.navDrawerItemColor))
                                 .withIcon(getDrawable(R.mipmap.ic_alarm_black_18dp))
-                                .withName("Будильники")
+                                .withName(R.string.alarms_menu_item_text)
                                 .withLevel(1)
                                 .withIdentifier(5),
                         new PrimaryDrawerItem()
@@ -200,19 +200,19 @@ public class HomeActivity extends AppCompatActivity {
                              case 1:
                                  drawerItem.withSetSelected(true);
                                  new AsyncTaskRunner(true, "Coinmarketcap").execute();
-                                 CurrentMarket = "Coinmarketcap";
+                                 CurrentMarket = getString(R.string.coinmarketcap_text);
                                  toolbar.setTitle(CurrentMarket);
                                  break;
                              case 2:
                                  drawerItem.withSetSelected(true);
                                  new AsyncTaskRunner(true, "Bittrex").execute();
-                                 CurrentMarket = "Bittrex";
+                                 CurrentMarket = getString(R.string.bittrex_text);
                                  toolbar.setTitle(CurrentMarket);
                                  break;
                              case 3:
                                  drawerItem.withSetSelected(true);
                                  new AsyncTaskRunner(true, "Exmo").execute();
-                                 CurrentMarket = "Exmo";
+                                 CurrentMarket = getString(R.string.exmo_text);
                                  toolbar.setTitle(CurrentMarket);
                                  break;
                              case 4:
@@ -287,7 +287,7 @@ public class HomeActivity extends AppCompatActivity {
                 mProgressDialog = new ProgressDialog(
                         HomeActivity.this, R.style.Theme_AppCompat_DayNight_Dialog);                    //set style for progressDialog
                 mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);                        //set spinner
-                mProgressDialog.setMessage("Загружаю. Подождите...");//H--C
+                mProgressDialog.setMessage(getString(R.string.loading_pls_wait_text));//H--C
                 mProgressDialog.setCanceledOnTouchOutside(false);
 
                 mProgressDialog.show();
@@ -333,7 +333,7 @@ public class HomeActivity extends AppCompatActivity {
             //Setting time mark for update restriction
             String formattedDate = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
             //updateTextView.setText("Обновлено: " + formattedDate);
-            getSupportActionBar().setSubtitle("Обновлено: " + formattedDate);
+            getSupportActionBar().setSubtitle(getString(R.string.updated_at_text) + formattedDate);
 
             updateTime = System.currentTimeMillis();
 

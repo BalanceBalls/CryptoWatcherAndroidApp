@@ -109,7 +109,6 @@ public class DetailActivity extends SwipeBackActivity  {
     protected void onStart() {
         super.onStart();
         if(isFirstOpen) {                                                                          //if activity is first created
-
             isFirstOpen = false;
         } else {                                                                                   //if activity called again , update rate values
                 Intent intent = new Intent(DetailActivity.this, HomeActivity.class);
@@ -117,7 +116,6 @@ public class DetailActivity extends SwipeBackActivity  {
                 finish();
         }
     }
-
     @Override
     protected void onPause() {
         super.onPause();

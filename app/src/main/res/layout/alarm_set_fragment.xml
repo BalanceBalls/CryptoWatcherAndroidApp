@@ -8,13 +8,14 @@
     android:layout_alignParentBottom="true"
     android:background="@color/homeItemColor"
     android:orientation="vertical">
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
-        android:text="Биржа"
+        android:text="@string/alarmset_market_text"
         android:textColor="@color/primaryTextColor"
         android:textSize="10sp" />
     <com.jaredrummler.materialspinner.MaterialSpinner
@@ -34,12 +35,13 @@
         app:ms_background_color="@color/backgroundColor"
         app:ms_dropdown_max_height="180dp"
         app:ms_text_color="@color/primaryTextColor" />
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="Валюта"
+        android:text="@string/alarmset_currency_text"
         android:textColor="@color/primaryTextColor"
         android:textSize="10sp" />
     <com.jaredrummler.materialspinner.MaterialSpinner
@@ -66,12 +68,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingLeft="5dp"
-            android:text="Уровень сопротивления"
+            android:text="@string/alarmset_resistance_level_text"
             android:textColor="@color/primaryTextColor"
             android:textSize="12sp" />
         <EditText
@@ -88,12 +91,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:text="Уровень поддержки"
+            android:text="@string/alarmset_support_level_text"
             android:textColor="@color/primaryTextColor"
             android:textSize="12sp" />
         <EditText
@@ -111,6 +115,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:id="@+id/waitTimeText"
             android:layout_width="match_parent"
@@ -119,7 +124,7 @@
             android:layout_weight="1"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:text="Ожидание после пробития уровня"
+            android:text="@string/alarmset_break_level_delay_text"
             android:textColor="@color/primaryTextColor"
             android:visibility="visible" />
         <TextView
@@ -139,6 +144,7 @@
         android:theme="@style/AppTheme"
         android:thumbTint="@color/primaryLightColor"
         android:tickMark="@color/primaryLightColor" />
+
     <Button
         android:id="@+id/set_alarm_button"
         android:layout_width="match_parent"
@@ -148,7 +154,7 @@
         android:fadingEdge="horizontal"
         android:onClick="onAlarmStartEvent"
         android:requiresFadingEdge="horizontal"
-        android:text="Установить будильник"
+        android:text="@string/alarmset_set_alarm_text"
         android:textColor="@color/textHighlighter" />
     <!-- <android.support.design.widget.CoordinatorLayout
          android:id="@+id/container"

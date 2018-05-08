@@ -78,8 +78,8 @@ public class AlarmViewAdapter extends RecyclerView.Adapter<AlarmViewAdapter.Alar
             @Override
             public boolean onLongClick(final View v) {
                new AlertDialog.Builder(v.getContext(), R.style.MaterialBaseTheme_Light_Dialog)
-                        .setTitle("Внимание!")
-                        .setMessage("Удалить оповещение?")
+                        .setTitle(R.string.attention_msg)
+                        .setMessage(R.string.delete_notification_qstn_msg)
                         .setIcon(android.R.drawable.ic_dialog_alert)
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 

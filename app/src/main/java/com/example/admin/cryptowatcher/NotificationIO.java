@@ -22,14 +22,15 @@ import java.util.ArrayList;
 
 /**
  * Created by Alex on 12.02.2018.
+ *This class works with I/O operations on a notification list.
+ *Data is stored in JSON form in a file
+ *in order to remain independent from the app.
+ *
  */
 
 public class NotificationIO  {
 
-    /*This class works with I/O operations on a notification list.
-    *Data is stored in JSON form in a file
-    *in order to remain independent from the app.
-    * */
+
     private ArrayList<NotificationEntity> finalList = new ArrayList<>();
 
     public ArrayList<NotificationEntity> getList(){

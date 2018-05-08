@@ -95,7 +95,7 @@ public class graphFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         materialSpinnerGraph = (MaterialSpinner)getView().findViewById(R.id.materialSpinnerGraph1);
-        materialSpinnerGraph.setItems("Месячный график", "Недельный график", "Дневной график");//H--C
+        materialSpinnerGraph.setItems(getString(R.string.monthly_chart_text), getString(R.string.weekly_chart_text), getString(R.string.daily_chart_text));//H--C
         materialSpinnerGraph.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
 
             @Override public void onItemSelected(MaterialSpinner view, int position, long id, String item) {

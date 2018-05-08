@@ -55,7 +55,7 @@
                 android:layout_alignBottom="@+id/alarm_card_res"
                 android:layout_marginStart="7dp"
                 android:layout_toEndOf="@+id/alarm_card_pair"
-                android:text="Сопротивление: "
+                android:text="@string/alarmcard_resistance_text"
                 android:textColor="@color/secondaryTextColor"
                 android:textSize="10sp" />
 
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/textView"
                 android:layout_below="@+id/alarm_card_pair"
-                android:text="Поддержка: "
+                android:text="@string/alarmcard_support_text"
                 android:textColor="@color/secondaryTextColor"
                 android:textSize="10sp" />
 

@@ -12,11 +12,12 @@ import android.webkit.WebViewClient;
 
 /**
  * Created by Alex on 20.01.2018.
+ * This activity displays news from the forklog. Just a web site inside a WebView
  */
 
 public class NewsActivity extends AppCompatActivity {
 
-    /*This activity displays news from the forklog. Just a web site inside a WebView */
+
     WebView webView;
     String appWebViewTempUrl = "";
     @Override

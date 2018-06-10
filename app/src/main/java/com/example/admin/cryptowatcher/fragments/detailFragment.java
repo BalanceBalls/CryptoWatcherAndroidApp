@@ -85,26 +85,26 @@ public class detailFragment extends Fragment  {
 
                 if (obj.getHOUR_CHANGE() > 0) {
                     hourDetailVal.setText("+" + obj.getHOUR_CHANGE() + "%");
-                    hourDetailVal.setTextColor(Color.parseColor("#FF99cc00"));//H--C
+                    hourDetailVal.setTextColor(getResources().getColor(R.color.positiveShift));//H--C
                 } else {
                     hourDetailVal.setText("" + obj.getHOUR_CHANGE() + "%");
-                    hourDetailVal.setTextColor(Color.parseColor("#FFFF4444"));//H--C
+                    hourDetailVal.setTextColor(getResources().getColor(R.color.negativeShift));//H--C
                 }
 
                 if (obj.getDAY_CHANGE() > 0) {
                     dayDetailVal.setText("+" + obj.getDAY_CHANGE() + "%");
-                    dayDetailVal.setTextColor(Color.parseColor("#FF99cc00"));//H--C
+                    dayDetailVal.setTextColor(getResources().getColor(R.color.positiveShift));//H--C
                 } else {
                     dayDetailVal.setText("" + obj.getDAY_CHANGE() + "%");
-                    dayDetailVal.setTextColor(Color.parseColor("#FFFF4444"));//H--C
+                    dayDetailVal.setTextColor(getResources().getColor(R.color.negativeShift));//H--C
                 }
 
                 if (obj.getWEEK_CHANGE() > 0) {
                     weekDetailVal.setText("+" + obj.getWEEK_CHANGE() + "%");
-                    weekDetailVal.setTextColor(Color.parseColor("#FF99cc00"));//H--C
+                    weekDetailVal.setTextColor(getResources().getColor(R.color.positiveShift));//H--C
                 } else {
                     weekDetailVal.setText("" + obj.getWEEK_CHANGE() + "%");
-                    weekDetailVal.setTextColor(Color.parseColor("#FFFF4444"));//H--C
+                    weekDetailVal.setTextColor(getResources().getColor(R.color.negativeShift));//H--C
                 }
 
                 priceVal.setText(obj.getPRICE().toString() + " " + fsym.substring(fsym.indexOf('/') + 1, fsym.length()));//H--C

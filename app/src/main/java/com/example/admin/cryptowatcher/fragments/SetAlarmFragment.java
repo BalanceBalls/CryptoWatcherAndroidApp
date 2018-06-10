@@ -46,8 +46,8 @@ public class SetAlarmFragment extends android.support.v4.app.Fragment {
     double initSupVal = 0;
     int supBarLast = 0;
     int resBarLast = 0;
-    TextView timeDurationValue;
-    TextView timeWaitText;
+   // TextView timeDurationValue;
+   // TextView timeWaitText;
     Spinner exchangeMarkets;
     Spinner pairsOnMarket;
     Button setAlarm;
@@ -84,9 +84,9 @@ public class SetAlarmFragment extends android.support.v4.app.Fragment {
         super.onViewCreated(view, savedInstanceState);
        // supVal =  (TextView)getView().findViewById(R.id.support_value);
        // resVal =  (TextView)getView().findViewById(R.id.resistance_value);
-        timeWaitText = (TextView)getView().findViewById(R.id.waitTimeText);
-        timeDurationValue = (TextView)getView().findViewById(R.id.timeDurationValue);
-        seekBar = (SeekBar)getView().findViewById(R.id.waitPeriod);
+        //timeWaitText = (TextView)getView().findViewById(R.id.waitTimeText);
+       // timeDurationValue = (TextView)getView().findViewById(R.id.timeDurationValue);
+      //  seekBar = (SeekBar)getView().findViewById(R.id.waitPeriod);
         //supportSeekBar = (SeekBar)getView().findViewById(R.id.support_seek_bar);
        // resistanceSeekBar = (SeekBar)getView().findViewById(R.id.resistance_seek_bar);
         supportLevelValue = (TextView)getView().findViewById(R.id.supportLevelValue);
@@ -116,76 +116,9 @@ public class SetAlarmFragment extends android.support.v4.app.Fragment {
         new AsyncTaskRunnerAlarm(marketsForSpinner[0]).execute();
         marketSpinner.setSelected(true);
 
-        seekBar.setMax(600);
+       /* seekBar.setMax(600);
 
-        /*supportSeekBar.setMax(50);
-        supportSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (progress==50) supportLevelValue.setText(initSupVal + "");
 
-                if(progress > supBarLast){
-
-                    double total = (  ((initSupVal)/100) * progress );
-                    Log.d("SeekF" , "Move right ; Total - " + total + " , Prog - " + progress + " , initVal = " + initResVal);
-                    total = initSupVal + total;
-                    supportLevelValue.setText(total + "");
-                    supBarLast = progress;
-                }
-                else{
-
-                    double total = ( ((initSupVal)/100) * progress );
-                    Log.d("SeekF" , "Move left; Total - " + total + " , Prog - " + progress + " , initVal = " + initResVal);
-                    total = initSupVal - total;
-                    supportLevelValue.setText(total + "");
-                    supBarLast = progress;
-                }
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-
-        resistanceSeekBar.setMax(50);
-        resistanceSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
-                if(progress > resBarLast){
-
-                    double total = (  (initResVal/100) * progress );
-                    Log.d("SeekF" , "Move right ; Total - " + total + " , Prog - " + progress + " , initVal = " + initResVal);
-                    total = initResVal + total;
-                    resistanceLevelValue.setText(total + "");
-                    resBarLast = progress;
-                }
-                else{
-
-                    double total = ( (initResVal/100) * progress );
-                    Log.d("SeekF" , "Move left; Total - " + total + " , Prog - " + progress + " , initVal = " + initResVal);
-                    total = initResVal - total;
-                    resistanceLevelValue.setText(total + "");
-                    resBarLast = progress;
-                }
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });*/
         seekBar.setOnSeekBarChangeListener( new SeekBar.OnSeekBarChangeListener(){
             public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser)
             {
@@ -204,7 +137,7 @@ public class SetAlarmFragment extends android.support.v4.app.Fragment {
                 timeDurationValue.setTextSize(14);
                 timeWaitText.setVisibility(View.VISIBLE);
             }
-        });
+        });*/
 
     }
     private void setInitValues(){
@@ -236,7 +169,7 @@ public class SetAlarmFragment extends android.support.v4.app.Fragment {
         //Writing new notification to a file
         new NotificationIO(getActivity().getApplicationContext(),new NotificationEntity(selectedExch,selectedPair,
                 Double.parseDouble(supportLevelValue.getText().toString().replace(',','.')),
-                Double.parseDouble(resistanceLevelValue.getText().toString().replace(',','.')),seekBar.getProgress()), "write");
+                Double.parseDouble(resistanceLevelValue.getText().toString().replace(',','.'))), "write");
 
 
         Snackbar.make(v, "Будильник установлен", Snackbar.LENGTH_LONG)

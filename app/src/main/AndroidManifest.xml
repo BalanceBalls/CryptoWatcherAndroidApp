@@ -41,6 +41,7 @@
             android:process=":testservice" />
 
         <activity android:name=".LogActivity"></activity>
+
     </application>
 
 </manifest>

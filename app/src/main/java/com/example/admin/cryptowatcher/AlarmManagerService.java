@@ -105,101 +105,13 @@ public class AlarmManagerService extends Service {
         super.onDestroy();
         AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
         alarm.set(
-                alarm.RTC_WAKEUP,
+                AlarmManager.RTC_WAKEUP,
                 System.currentTimeMillis() + 60000,
                 PendingIntent.getService(getApplicationContext(), SERVICE_ID, new Intent(this, AlarmManagerService.class), 0)
         );
     }
 
 
-/*    Thread t = new Thread( new Runnable() {
-        @Override
-        public void run() {
-            while (!mFinished) {
-                try {
-                    Log.d(TAG, "Thread started working");
-                    //boolean loopRunning = true;
-                    //isAllowed.set(false);// forbid to execute IO operations on alarmList
-                    // boolean stopIter = false;
-                    String formattedDate = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
-                    String inputData = "Thread is running at " + formattedDate ;
-
-                    File inpFile =  new File(getApplicationContext().getFilesDir(), "logserv");
-
-                    try { FileOutputStream fos =  new FileOutputStream(inpFile,true);
-                        try {fos.write(inputData.toString().getBytes());
-                        }finally {fos.close();}
-                    } catch (IOException e) { }
-                    for (NotificationEntity alarmEntity : alarmList) {
-
-                        Log.d(TAG, "Going through alarmList");
-                        switch (alarmEntity.getMarketName()) {
-                            case "Exmo": {
-                                if (ExmoCheck(alarmEntity.getPairName(), alarmEntity.getSupportLevel(), alarmEntity.getResistanceLevel())) {
-                                    removeIndex.add(alarmList.indexOf(alarmEntity));
-                                    Log.d(TAG, " Remove index is set to " + removeIndex + " for " + alarmEntity.getPairName());
-                                }
-                                break;
-                            }
-                            case "Bittrex": {
-                                if (BittrexCheck(alarmEntity.getPairName(), alarmEntity.getSupportLevel(), alarmEntity.getResistanceLevel())) {
-                                    removeIndex.add(alarmList.indexOf(alarmEntity));
-                                    Log.d(TAG, " Remove index is set to " +
-                                            removeIndex + " for " + alarmEntity.getPairName());
-                                }
-                                break;
-                            }
-                        }
-
-                    }
-
-                    Log.d(TAG, "thread loop started");
-                    if (!removeIndex.isEmpty()) {
-                       //If we have items in removeIndex array, then we delete those items from the storage file
-                        for (int i : removeIndex) {
-
-                            Log.d(TAG, " Record at " + i + " has been removed , " + alarmList.get(i).getPairName() + " , pair's index in the list is " + alarmList.indexOf(alarmList.get(i)));
-
-                            new DeleteFromFile(i).execute();
-                        }
-
-
-                        for (NotificationEntity q : alarmList) {
-                            Log.d(TAG, " Alarm queue :" + q.getMarketName() + " ," +
-                                    " " + q.getPairName() + " / Remove Index = " + removeIndex);
-                        }
-
-                        Log.d(TAG, " Removing is done");
-                        removeIndex.clear();
-                    }
-
-                    onPauseThread();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                synchronized (mPauseLock) {
-                    while (mPaused) {
-                        try {
-                            Log.d(TAG, " The thread finished its' work, going to sleep");
-                            mPauseLock.wait();
-                        } catch (InterruptedException e) {
-                        }
-                    }
-                }
-            }
-        }
-    });*/
-    public void onPauseThread() {
-        synchronized (mPauseLock) {
-            mPaused = true;
-        }
-    }
-    public void onResumeThread() {
-        synchronized (mPauseLock) {
-            mPaused = false;
-            mPauseLock.notifyAll();
-        }
-    }
     private boolean BittrexCheck(String pair, double sup, double res) throws IOException{
         boolean state = false;
         Log.d(TAG, "BittrexCheck is called");
@@ -549,15 +461,7 @@ public class AlarmManagerService extends Service {
             alarmList = dataList.getList();
 
             if(!alarmList.isEmpty()){
-                /*Log.d(TAG, "background task allowed to begin checking stocks");
 
-                if(t.getState() == Thread.State.NEW){
-                    t.start();
-                    Log.d(TAG, "New thread created");
-                } else{
-                    onResumeThread();
-                    Log.d(TAG, "Thread resumed");
-                }*/
                 new DoScanStocks(alarmList).execute();
             }else{
                 mFinished = true;

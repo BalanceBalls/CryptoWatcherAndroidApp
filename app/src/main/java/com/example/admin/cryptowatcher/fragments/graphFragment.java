@@ -207,7 +207,7 @@ public class graphFragment extends Fragment {
                 Log.d("TestP" , histObj.getString("Response"));
                 if(histObj.getString("Response") == "Error"){
                    success = false;
-                    // initializeLineGraphView(graphF,timePeriod,false);
+
                 }else {
                     JSONArray jsonArr = histObj.getJSONArray(ARRAY_TAG);
 
@@ -268,8 +268,8 @@ public class graphFragment extends Fragment {
                 series.setDrawDataPoints(true);
                 series.setDataPointsRadius(6);
                 series.setThickness(3);
-                series.setColor(getResources().getColor(R.color.primaryColor));//H--C
-                series.setTitle(pairName + "/USD");//H--C
+                series.setColor(getResources().getColor(R.color.primaryTextColor));
+                series.setTitle(pairName);
 
                 graph1.getLegendRenderer().setBackgroundColor(getResources().getColor(R.color.backgroundColor));//H--C
                 graph1.getLegendRenderer().setTextSize(20f);
@@ -295,7 +295,8 @@ public class graphFragment extends Fragment {
 
                 graph1.getGridLabelRenderer().setHorizontalLabelsAngle(50);
 
-                graph1.getGridLabelRenderer().setHorizontalLabelsColor(getResources().getColor(R.color.primaryTextColor));//H--C
+                graph1.getGridLabelRenderer().setHorizontalLabelsColor(getResources().getColor(R.color.secondaryTextColor));//H--C
+                graph1.getGridLabelRenderer().setVerticalLabelsColor(getResources().getColor(R.color.secondaryTextColor));
                 graph1.getGridLabelRenderer().setTextSize(20.3f);
 
 

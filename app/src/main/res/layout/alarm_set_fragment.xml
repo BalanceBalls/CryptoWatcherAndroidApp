@@ -16,8 +16,9 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:text="@string/alarmset_market_text"
-        android:textColor="@color/primaryTextColor"
+        android:textColor="@color/secondaryTextColor"
         android:textSize="10sp" />
+
     <com.jaredrummler.materialspinner.MaterialSpinner
         android:id="@+id/market_spinner"
         style="@style/Base.Widget.AppCompat.Spinner.Underlined"
@@ -34,7 +35,7 @@
         android:textSize="13dp"
         app:ms_background_color="@color/backgroundColor"
         app:ms_dropdown_max_height="180dp"
-        app:ms_text_color="@color/primaryTextColor" />
+        app:ms_text_color="@color/secondaryTextColor" />
 
     <TextView
         android:id="@+id/textView4"
@@ -42,8 +43,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:text="@string/alarmset_currency_text"
-        android:textColor="@color/primaryTextColor"
+        android:textColor="@color/secondaryTextColor"
         android:textSize="10sp" />
+
     <com.jaredrummler.materialspinner.MaterialSpinner
         android:id="@+id/pairs_spinner"
         style="@style/Base.Widget.AppCompat.Spinner.Underlined"
@@ -56,14 +58,14 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:gravity="left"
         android:drawableBottom="@drawable/ms__arrow"
+        android:gravity="left"
         android:textSize="13dp"
         android:theme="@style/AppTheme"
         app:ms_background_color="@color/backgroundColor"
         app:ms_dropdown_height="400dp"
         app:ms_dropdown_max_height="400dp"
-        app:ms_text_color="@color/primaryTextColor" />
+        app:ms_text_color="@color/secondaryTextColor" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -75,8 +77,9 @@
             android:layout_weight="1"
             android:paddingLeft="5dp"
             android:text="@string/alarmset_resistance_level_text"
-            android:textColor="@color/primaryTextColor"
+            android:textColor="@color/secondaryTextColor"
             android:textSize="12sp" />
+
         <EditText
             android:id="@+id/resistanceLevelValue"
             android:layout_width="match_parent"
@@ -84,7 +87,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="number|numberDecimal"
-            android:textColor="@color/primaryTextColor"
+            android:textColor="@color/secondaryTextColor"
             android:textSize="12sp" />
     </LinearLayout>
     <LinearLayout
@@ -98,8 +101,9 @@
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:text="@string/alarmset_support_level_text"
-            android:textColor="@color/primaryTextColor"
+            android:textColor="@color/secondaryTextColor"
             android:textSize="12sp" />
+
         <EditText
             android:id="@+id/supportLevelValue"
             android:layout_width="match_parent"
@@ -108,54 +112,32 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:textColor="@color/primaryTextColor"
+            android:textColor="@color/secondaryTextColor"
             android:textSize="12sp" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/waitTimeText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp"
+        <Button
+            android:id="@+id/set_alarm_button"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_weight="1"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:text="@string/alarmset_break_level_delay_text"
-            android:textColor="@color/primaryTextColor"
-            android:visibility="visible" />
-        <TextView
-            android:id="@+id/timeDurationValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:text="0"
-            android:textColor="@color/primaryTextColor"
-            android:textSize="14sp" />
+            android:background="@drawable/circle"
+            android:elevation="8dp"
+            android:fadingEdge="horizontal"
+            android:gravity="center_vertical|center_horizontal"
+            android:onClick="onAlarmStartEvent"
+            android:requiresFadingEdge="horizontal"
+            android:text="Установить"
+            android:textColor="@color/secondaryTextColor" />
     </LinearLayout>
-    <SeekBar
-        android:id="@+id/waitPeriod"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:theme="@style/AppTheme"
-        android:thumbTint="@color/primaryLightColor"
-        android:tickMark="@color/primaryLightColor" />
 
-    <Button
-        android:id="@+id/set_alarm_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/primaryLightColor"
-        android:backgroundTintMode="@color/primaryColor"
-        android:fadingEdge="horizontal"
-        android:onClick="onAlarmStartEvent"
-        android:requiresFadingEdge="horizontal"
-        android:text="@string/alarmset_set_alarm_text"
-        android:textColor="@color/textHighlighter" />
     <!-- <android.support.design.widget.CoordinatorLayout
          android:id="@+id/container"
          android:layout_width="match_parent"

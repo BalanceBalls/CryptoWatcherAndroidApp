@@ -9,22 +9,22 @@
     <color name="navDrawerColor">#db3e3e3e</color>
     <color name="navDrawerItemColor">#c6c4c4</color>#42a5f5 (prim)/ 80d6ff (light) / #0077c2 (dark)
     -->
-    <color name="primaryColor">#70B3EE</color>
+    <color name="primaryColor">#212121</color>
     <color name="primaryLightColor">#ABD9FF</color>
-    <color name="primaryDarkColor">#007DB3</color>
-    <color name="primaryTextColor">#000000</color>
-    <color name="secondaryTextColor">#2b2a2a</color>
+    <color name="primaryDarkColor">#161616</color>
+    <color name="primaryTextColor">#43a047</color>
+    <color name="secondaryTextColor">#abc0d4</color>
     <color name="someColor">#616161</color>
     <color name="backgroundMaterialLight">#075b81</color>
     <color name="toolbarColor">#b3e5fc</color>
     <color name="hintBlack">#82b3c9</color>
-    <color name="navDrawerColor">#F5F5F6</color>
-    <color name="navDrawerHeaderColor">#70B3EE</color>
-    <color name="backgroundColor">#eff1ef</color>
-    <color name="homeItemColor">#f7f7f7</color>
+    <color name="navDrawerColor">#262626</color>
+    <color name="navDrawerHeaderColor">#202121</color>
+    <color name="backgroundColor">#292929</color>
+    <color name="homeItemColor">#262626</color>
     <color name="textHighlighter">#555e7b</color>555e7b
-    <color name="navDrawerItemColor">#616161</color>
+    <color name="navDrawerItemColor">#cfd8dc</color>
     <color name="statusBarColor">#82b3c9</color>
-    <color name="positiveShift">#2862ba</color>
+    <color name="positiveShift">#43a047</color>
     <color name="negativeShift">#b64747</color>
 </resources>

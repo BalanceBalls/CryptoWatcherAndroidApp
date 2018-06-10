@@ -54,38 +54,6 @@ public class NotificationIO  {
             }
     }
 
-    /*public NotificationIO(int mode, ArrayList<NotificationEntity> alarms,Context ctx){
-        switch (mode){
-            case 0:    saveToFile(alarms,ctx);
-                try {
-                    readFromFile(ctx);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                break;
-            case 1:
-                try {
-                    readFromFile(ctx);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                break;
-        }
-    }
-
-    private void saveToFile(ArrayList<NotificationEntity> alarmSet, Context ctx){
-
-        JSONArray inputData = formJSON(alarmSet, ctx);
-
-        File inpFile =  new File(ctx.getFilesDir(), "alarmlist.json");
-
-            try { FileOutputStream fos =  new FileOutputStream(inpFile,false);
-               try {fos.write(inputData.toString().getBytes());
-               }finally {fos.close();}
-            } catch (IOException e) { }
-    }*/
     private void deleteItemFromFile(Context ctx){
         JSONArray inputData = formJSON(finalList, ctx);
 
@@ -115,7 +83,6 @@ public class NotificationIO  {
     }
     private JSONArray formJSON(ArrayList<NotificationEntity> alarms , Context ctx){
 
-
        // finalList.addAll(alarms);
         JSONArray dataList = new JSONArray();
             for(NotificationEntity ent : finalList){
@@ -126,7 +93,7 @@ public class NotificationIO  {
                     temp.put("pair", ent.getPairName());
                     temp.put("supportlevel" , ent.getSupportLevel());
                     temp.put("resistlevel", ent.getResistanceLevel());
-                    temp.put("waittime", ent.getWaitTimeSeconds());
+                    //temp.put("waittime", ent.getWaitTimeSeconds());
                     dataList.put(temp);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -160,8 +127,8 @@ public class NotificationIO  {
                 String pair = temp.getString("pair");
                 double sup = Double.parseDouble(temp.getString("supportlevel"));
                 double res = Double.parseDouble(temp.getString("resistlevel"));
-                int time = Integer.parseInt(temp.getString("waittime"));
-                NotificationEntity tempEnt =  new NotificationEntity(market,pair,sup,res,time);
+               // int time = Integer.parseInt(temp.getString("waittime"));
+                NotificationEntity tempEnt =  new NotificationEntity(market,pair,sup,res);
                 finalList.add(tempEnt);
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -188,9 +155,7 @@ public class NotificationIO  {
                 hasEntry = true;
                 index = finalList.indexOf(ent);
                 break;
-
             }
-
         }
         if(hasEntry) {
             finalList.remove(index);
@@ -218,11 +183,7 @@ public class NotificationIO  {
         reader.close();
         for (NotificationEntity entTemp : finalList){
             Log.d("IOcheck", "Market = " + entTemp.getMarketName()  + " , Pair = " + entTemp.getPairName()  +
-                    " , sup = " + entTemp.getSupportLevel()  + " , res= " + entTemp.getResistanceLevel() + ", time = " + entTemp.getWaitTimeSeconds() +
-                    " , List length = " + finalList.size());
+                    " , sup = " + entTemp.getSupportLevel()  + " , res= " + entTemp.getResistanceLevel() + ", List length = " + finalList.size());
         }
     }
-
-
-
 }

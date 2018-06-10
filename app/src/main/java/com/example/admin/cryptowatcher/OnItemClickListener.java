@@ -5,5 +5,5 @@ package com.example.admin.cryptowatcher;
  */
 
 public interface OnItemClickListener {
-    public void onItemLongClicked(NotificationEntity item);
+    void onItemLongClicked(NotificationEntity item);
 }

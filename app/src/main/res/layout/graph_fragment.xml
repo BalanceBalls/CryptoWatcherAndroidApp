@@ -26,7 +26,7 @@
         android:textAlignment="center"
         android:textSize="13dp"
         app:ms_background_color="@color/backgroundColor"
-        app:ms_text_color="@color/primaryTextColor" />
+        app:ms_text_color="@color/secondaryTextColor" />
 
     <TextView
         android:id="@+id/graphErrorText"

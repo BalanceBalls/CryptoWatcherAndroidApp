@@ -49,7 +49,13 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-
+/*
+* Для данной активити необходимо реализовать фрагменты:
+* 1 - Фрагмент для coinmarketcap
+* 2 - Фрагмент для остальных бирж
+* (Не будет перехода на detailActivity)
+* Для 2 реализовать popup с графиком на listView item
+* */
 public class HomeActivity extends AppCompatActivity {
 
 
@@ -247,6 +253,7 @@ public class HomeActivity extends AppCompatActivity {
             .withEmail("potniyDeveloper@gmail.com")
             .withIcon(R.drawable.bighead)
             .withIdentifier(100);
+
     protected AccountHeader getAccountHeader() {
         return new AccountHeaderBuilder()
                     .withActivity(this)
@@ -315,7 +322,6 @@ public class HomeActivity extends AppCompatActivity {
                     result = "Success";
 
             } catch (Exception e){
-
             }
             return result;
         }
@@ -332,7 +338,7 @@ public class HomeActivity extends AppCompatActivity {
 
             //Setting time mark for update restriction
             String formattedDate = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
-            //updateTextView.setText("Обновлено: " + formattedDate);
+
             getSupportActionBar().setSubtitle(getString(R.string.updated_at_text) + formattedDate);
 
             updateTime = System.currentTimeMillis();
